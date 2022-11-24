@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import { useRef, useState } from "react"
+import { Link } from "react-router-dom"
+=======
+import { useRef } from "react"
+>>>>>>> a2e40d2f9e4409674adbde4c8aafcd3519f78469
 import './gostos.css'
 import { Link } from "react-router-dom"
 
@@ -42,12 +47,12 @@ const Gostos =()=>{
     },
 ]
 
-    const [btnSelect, setbtnSelect] = useState(false)
+  
 
 
 
 const carrocel = useRef(null)
-const item = useRef(null)
+
 
 const handleLeftClick =(e)=>{
     e.preventDefault()
@@ -58,12 +63,15 @@ const handleRightClick =(e)=>{
     e.preventDefault()
     carrocel.current.scrollLeft += carrocel.current.offsetWidth
 }
-
+<<<<<<< HEAD
 const handleCLickItem =(e)=>{
     e.preventDefault();
     setbtnSelect(btnSelect => !btnSelect)
 }
-let addClass = btnSelect ? ' active' : ''
+=======
+>>>>>>> a2e40d2f9e4409674adbde4c8aafcd3519f78469
+
+
 
     return(
         <div className="Container-Gostos">
@@ -73,7 +81,7 @@ let addClass = btnSelect ? ' active' : ''
 
 
             <button 
-            className={`arrow-left`}
+            className='arrow-left'
             onClick={handleLeftClick}
             >
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +93,7 @@ let addClass = btnSelect ? ' active' : ''
                 </button>
 
                 <button 
-                className={`arrow-right`}
+                className='arrow-right'
                 onClick={handleRightClick}
                 >
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +112,6 @@ let addClass = btnSelect ? ' active' : ''
                                 <div 
                                 key={img.id} 
                                 className={`item item${img.id}`}
-                                ref={item}
                                 >
                                     <img 
                                     src={img.img} 
@@ -119,10 +126,19 @@ let addClass = btnSelect ? ' active' : ''
                </div>
             </div>
 
+<<<<<<< HEAD
+            {/* <button
+               className="btn btn-primary"
+               id="btn-gostos">Confirmar
+            </button> */}
+
+            <Link to={"/"} className="btn btn-primary" id="btn-gostos">Confirmar</Link>
+=======
             <Link
                className="btn btn-primary"
                id="btn-gostos" to={'/'}>Confirmar
             </Link>
+>>>>>>> a2e40d2f9e4409674adbde4c8aafcd3519f78469
         </div>
     )
 }
